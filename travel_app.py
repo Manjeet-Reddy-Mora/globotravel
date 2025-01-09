@@ -21,7 +21,7 @@ def load_data(url):
         st.stop()
 
 # Update the URL to the raw link
-url = 'https://raw.githubusercontent.com/rajeevdhoni/Globo-Travel/main/updated_travel_data.xlsx'
+url = 'https://github.com/Manjeet-Reddy-Mora/globotravel/blob/main/updated_travel_data%20(4).xlsx'
 
 # Load the travel data
 travel_data = load_data(url)
