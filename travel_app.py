@@ -211,3 +211,24 @@ if question:
 st.write('---')
 st.markdown('<div style="text-align: center; font-size: small;">© 2024 GLOBO Travel. All rights reserved.</div>', unsafe_allow_html=True)
 
+# GitHub username
+GITHUB_USERNAME = "Manjeet-Reddy-Mora"
+
+# GitHub API URL to fetch user details
+GITHUB_API_URL = f"https://api.github.com/users/{GITHUB_USERNAME}"
+
+# Fetch GitHub profile data
+response = requests.get(GITHUB_API_URL)
+if response.status_code == 200:
+    user_data = response.json()
+    profile_name = user_data["name"] if user_data["name"] else GITHUB_USERNAME
+    profile_image = user_data["avatar_url"]
+else:
+    profile_name = "GitHub User"
+    profile_image = "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+
+# **Place this code in the main body of the app (not sidebar)**
+st.image(profile_image, width=100)  # Display profile picture
+st.markdown(f"### Created by [{profile_name}](https://github.com/{GITHUB_USERNAME})")
+st.write("---")  # Add a separator line to create some space
+
